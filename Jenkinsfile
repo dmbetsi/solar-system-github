@@ -2,6 +2,7 @@ pipeline {
     agent {label 'server-js'}
 	tools {
       nodejs 'NodeJS24'
+	  git 'Default'
     }
 
     stages {
