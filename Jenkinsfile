@@ -11,7 +11,7 @@ pipeline {
                 script {
                    sh "node -v"
 				   sh "npm -v"
-				   
+				   echo "hello world"
 					
                 }
             }
