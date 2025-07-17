@@ -1,5 +1,5 @@
 pipeline {
-    agent {label: server-js}
+    agent {label 'server-js'}
 	tools {
       nodejs 'NodeJS24'
     }
