@@ -27,14 +27,19 @@ pipeline {
                 }
             }
         }
+		stage('Check dependencies') {
+            steps {
+
+                // Vérifie les vulnérabilités (audit)
+                sh 'npm audit --audit-level=critical || true'
+            }
+        }
 		
 		stage('test') {
             steps {
-                script {
-				   sh "npm test"
-				   
-					
-                }
+                
+				sh 'npm test'	
+               
             }
         }
 		
