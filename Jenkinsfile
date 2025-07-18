@@ -7,17 +7,7 @@ pipeline {
 
     stages {
 
-        stage('check nodeJS') {
-            steps {
-                script {
-                   sh "node -v"
-				   sh "npm -v"
-				   echo "hello world"
-					
-                }
-            }
-        }
-		
+        
 		stage('install dependency') {
             steps {
                 script {
@@ -34,6 +24,18 @@ pipeline {
                 sh 'npm audit --audit-level=critical || true'
             }
         }
+		
+		stage('check nodeJS') {
+            steps {
+                script {
+                   sh "node -v"
+				   sh "npm -v"
+				   sh 'npx mocha --version'
+					
+                }
+            }
+        }
+		
 		
 		stage('test') {
             steps {
