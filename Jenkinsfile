@@ -18,5 +18,34 @@ pipeline {
             }
         }
 		
+		stage('install dependency') {
+            steps {
+                script {
+				   sh "npm -v"
+				   
+					
+                }
+            }
+        }
+		
+		stage('test') {
+            steps {
+                script {
+				   sh "npm test"
+				   
+					
+                }
+            }
+        }
+		
+		stage('deploy') {
+            steps {
+                script {
+				   sh "npm start"
+				   
+					
+                }
+            }
+        }
 	}
 }
