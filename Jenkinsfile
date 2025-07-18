@@ -39,7 +39,7 @@ pipeline {
 		
 		stage('test') {
             steps {
-                
+                sh 'mocha -v'
 				sh 'npm test'	
                
             }
